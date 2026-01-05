@@ -85,7 +85,7 @@ body, div, ul, nav, header, footer, a, li, label {
 
 /* ------ HEADER QUERIES ------ */
 
-@container hola (min-width: 600px) {
+@container hola (min-width: 720px) {
     .header__nav {
         display: block;
         position: static;
@@ -109,3 +109,130 @@ body, div, ul, nav, header, footer, a, li, label {
 }
 
 /* ------ HEADER ENDS ------ */
+
+
+/* ------ PROFILE SECTION ------ */
+
+.profile {
+    container-name: profile;
+    container-type: inline-size;
+}
+
+.profile__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #fff;
+    max-width: 1400px;
+
+}
+
+.profile__data-container {
+    max-width: 600px;
+    padding: 12px;
+}
+
+.profile__img-container {
+    max-height: 500px;
+    overflow: hidden;
+}
+
+.profile__img {
+    max-width: 100%;
+    width: 720px;
+}
+
+h1 {
+    color: #26a;
+}
+
+
+.profile__skills-container h2 {
+    color: #26a;
+}
+
+.profile__skill {
+    list-style: none;
+    display: flex;
+    margin: 10px;
+    max-width: 600px;
+    margin-left: 0;
+    align-items: center;
+}
+
+.load-bar {
+    border: 2px solid #48e;
+    border-radius: 8px;
+    color: #fff;
+    padding: 2px;
+    font-size: 12px;
+    width: 80%;
+    margin: 4px;
+    margin-left: 0;
+}
+
+.profile__skill-name {
+    color: #48e;
+}
+
+.load-bar__bar {
+    background-color: #48e;
+    border-radius: 4px;
+    padding: 4px 6px;
+}
+
+.bar--80 {
+    width: 80%;
+}
+
+.bar--70 {
+    width: 70%;
+}
+
+.bar--60 {
+    width: 60%;
+}
+
+.bar--90 {
+    width: 90%;
+}
+
+
+/* ------ PROFILE QUERIES ------ */
+
+@container profile (min-width:720px) {
+    .profile__wrapper {
+        flex-direction: row;
+        padding: 20px;
+        background-color: transparent;
+        height: 90vh;
+        margin: auto;
+    }
+    .profile__data-container {
+        background-color: #fff;
+        display: flex;
+        align-items: center;
+    }
+
+    h1 {
+        margin-top: 0;
+        font-size: 4rem;
+        text-wrap: balance;
+    }
+
+    .profile__data {
+        max-width: 620px;
+    }
+
+    .profile__img-container {
+        max-height: initial;
+    }
+
+    .profile__img {
+        height: 100%;
+        object-fit: cover;
+        width: 620px;
+    }
+} 
+
+/* ------ PROFILE ENDS ------ */
