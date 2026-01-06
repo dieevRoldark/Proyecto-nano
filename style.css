@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -399,6 +400,14 @@ footer {
     font-weight: bold;
 }
 
+footer a {
+    text-decoration: none;
+    color: #e2eaff;
+}
+
+footer :is(:hover,:active) {
+    text-decoration: underline;
+}
 /* ------ FOOTER ENDS ------ */
 
 
