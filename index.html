@@ -28,13 +28,13 @@
         </div>
         <nav class="header__nav">
             <ul class="header__nav-list">
-                <li class="header__nav-item"><a href="#">About</a></li>
-                <li class="header__nav-item"><a href="#">portfolio</a></li>
-                <li class="header__nav-item"><a href="#">contact</a></li>
+                <li class="header__nav-item"><a href="#inicio">Inicio</a></li>
+                <li class="header__nav-item"><a href="#portfolio">portfolio</a></li>
+                <li class="header__nav-item"><a href="#contacto">Contacto</a></li>
             </ul>
         </nav>
     </header>
-    <main class="profile">
+    <main class="profile" id="inicio">
         <div class="profile__wrapper">
             <div class="profile__img-container">
                 <img src="diego.jpg" class="profile__img" >
@@ -84,15 +84,13 @@
                             </div>
                             <span class="profile__skill-name">SQL</span>
                         </li>
-
                     </ul>
-
                 </div>
             </div>
         </div>
     </main>
 
-    <section class="portfolio">
+    <section class="portfolio" id="portfolio">
         <h2 class="portfolio__title">PORTFOLIO SECTION</h2>
         <div class="portfolio__project-container">
             <div class="portfolio__project">
@@ -118,45 +116,46 @@
             <div class="portfolio__project">
                 <h2 class="portfolio__project-name">projec5</h2>
             </div>
-
         </div>
     </section>
 
-    <section class="form">
+    <section class="form" id="contacto">
         <h2 class="form__title" >Contacto</h2>
         <form class="form__form">
             <div class="form__input-container">
-                <label for="">Nombre
-                    <input type="text" placeholder="John">
+                <label for="name">Nombre
+                    <input type="text" id="name" name="nombre" placeholder="John" required>
                 </label>
             </div>
 
             <div class="form__input-container">
-                <label for="">Apellido
-                    <input type="text" placeholder="Smith">
+                <label for="last-name">Apellido
+                    <input type="text" id="last-name" name="apellido" placeholder="Smith" required>
                 </label>
             </div>
 
             <div class="form__input-container">
-                <label for="">Email
-                    <input type="email" placeholder="Example@dominio.com">
+                <label for="email">Email
+                    <input type="email" id="email" name="email" placeholder="Example@dominio.com" required>
                 </label>
             </div>
 
             <div class="form__input-container">
-                <label for="">Mensaje
-                    <textarea placeholder="Añade tu mensaje."></textarea>
+                <label for="menssage">Mensaje
+                    <textarea id="menssage" placeholder="Añade tu mensaje..."></textarea>
                 </label>
             </div>
 
             <div class="form__input-container">
-                <input type="submit">
+                <input type="submit" value="ENVIAR">
             </div>
         </form>
     </section>
     
     <footer>
-        Diego Roldan c. Copyrigth
+        Copyrigth C. 2026 Diego Roldan. Todos los derechos reservados.
+        <a href="https://github.com/dieevRoldark" target="_blank" rel="noopenernoreferrer">Github</a>
+        <a href="https://www.linkedin.com/in/diego-rol-c/" target="_blank" rel="noopenernoreferrer">Linkedin</a>
     </footer>
 
     
