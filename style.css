@@ -21,12 +21,11 @@ body, div, ul, nav, header, footer, a, li, label {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    container-type: inline-size;
-    container-name: hola;
     position: relative;
     z-index: 10;
     text-align: center;
     font-size: 20px;
+    color: #48e;
 }
 
 .header__open-nav-button {
@@ -77,7 +76,7 @@ body, div, ul, nav, header, footer, a, li, label {
 }
 
 .header__nav-item a {
-    color: #48e;
+    color: inherit;
     text-decoration: none;
 }
 
@@ -90,13 +89,24 @@ body, div, ul, nav, header, footer, a, li, label {
 
 /* ------ HEADER QUERIES ------ */
 
-@container hola (min-width: 720px) {
+@media screen and (min-width: 600px) {
+
+    .header {
+        padding: 20px 0;
+        animation: header-movement both;
+        animation-timeline: scroll();
+        position: sticky;
+        top: 0;
+        animation-range: 10px 100px;
+    }
+
     .header__nav {
         display: block;
         position: static;
         height: auto;
         width: auto;
         justify-content: space-between;
+        background-color: initial;
     }
 
     .header__nav-list {
@@ -121,6 +131,7 @@ body, div, ul, nav, header, footer, a, li, label {
 .profile {
     container-name: profile;
     container-type: inline-size;
+    animation: aparecer 2.4s -.6s both;
 }
 
 .profile__wrapper {
@@ -409,6 +420,21 @@ footer :is(:hover,:active) {
     text-decoration: underline;
 }
 /* ------ FOOTER ENDS ------ */
+
+/*------ Animaciones-------*/
+
+@keyframes header-movement {
+    form {
+        padding: 20px 0;
+        background-color: #fff;
+    }
+    to {
+        padding: 0;
+        background-color: #0006;
+        color: #fff;
+    }
+}
+
 
 
 
