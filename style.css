@@ -43,7 +43,7 @@ body, div, ul, nav, header, footer, a, li, label {
 
 .header__nav{
     display: none;
-    background-color: #efe8e1;
+    background-color: #fff;
     position: absolute;
     height: 100vh;
     width: 100vw;

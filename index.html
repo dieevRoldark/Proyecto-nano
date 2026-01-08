@@ -3,19 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio</title>
+    <title>Portafolio de Diego</title>
     <meta name="description" content="Portafolio el cual busca ser la inspiración personal para construir grandes sitios webs">
     <meta name="keywords" content="Portafolio, inspiración, creatividad, desarrollo, personal">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#4CAF50">
 
-
+    <!-- Etiqueta Open Graph -->
     <meta property="og:title" content="Portafolio - Diego Roldan" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="roldandev.com" />
-    <meta property="og:image" content="roldandev.com/diego.jpg" />
-    <meta property="og:description" content="Demostración de las habilidades aprendidas dentro y fuera de la universidad." />   
+    <meta property="og:image" content="imgs/diego.jpg" />
+    <meta property="og:description" content="Demostración de las habilidades aprendidas dentro y fuera de la universidad." />
 
+    <link rel="alternate" href="https://roldandev.com/en">
     <link rel="icon" type="image/png" href="/imgs/Gemini.png">
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="fonts.css">
@@ -100,13 +101,27 @@
             	C374.116,184.975,377.989,181.103,377.989,176.328z"/>
             </svg></a>
         </div>
-        <nav class="header__nav">
+
+        <nav class="header__nav" id="menu">
             <ul class="header__nav-list">
                 <li class="header__nav-item"><a href="#inicio">Inicio</a></li>
                 <li class="header__nav-item"><a href="#portfolio">portfolio</a></li>
                 <li class="header__nav-item"><a href="#contacto">Contacto</a></li>
             </ul>
         </nav>
+
+        <script>
+            window.menu.addEventListener('click', () => {
+                document.getElementById('open-menu').checked = false;
+                }
+            );
+
+
+        </script>
+
+
+
+
     </header>
     <main class="profile" id="inicio">
         <div class="profile__wrapper">
