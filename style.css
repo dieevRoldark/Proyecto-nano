@@ -17,7 +17,7 @@ body, div, ul, nav, header, footer, a, li, label {
 /* ------ HEADER SECTION ------ */
 
 .header {
-    background-color: #fff;
+    background-color: #efe8e8;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -43,7 +43,7 @@ body, div, ul, nav, header, footer, a, li, label {
 
 .header__nav{
     display: none;
-    background-color: #fff;
+    background-color: #efe8e1;
     position: absolute;
     height: 100vh;
     width: 100vw;
@@ -57,18 +57,17 @@ body, div, ul, nav, header, footer, a, li, label {
     height: 40vh;
     margin: auto;
     justify-content: space-evenly;
+    font-weight: bold;
 }
 
 .header__checkbox:checked ~ .header__nav {
     display: flex;
 }
 
-
-
 .header__logo {
     max-width: 100%;
     width: 64px;
-    margin: 10px 20px;
+    margin: 11px 20px;
 }
 
 .header__nav-item {
@@ -82,9 +81,8 @@ body, div, ul, nav, header, footer, a, li, label {
 
 .header__nav-item :is(:hover,:active) {
     text-decoration: underline;
+    text-shadow: 4px 6px 15px #0004;
 }
-
-
 
 
 /* ------ HEADER QUERIES ------ */
@@ -276,7 +274,7 @@ h1 {
 }
 
 .portfolio__title {
-    font-size: 3rem;
+    font-size: 1.9rem;
 }
 
 .portfolio__project-container {
@@ -296,6 +294,13 @@ h1 {
     background-size: cover;
     display: grid;
     place-content: center;
+    height: 150px;
+}
+.portfolio--projects {
+    background-image: linear-gradient(#0009,#0009), url("project1.png");
+    background-position: center;
+    background-size: cover;
+    height: 150px;
 }
 
 .portfolio__project:hover {
@@ -311,11 +316,11 @@ h1 {
     }
 
     .portfolio__project:first-child{
-        grid-column: span 2;
+        grid-column: span 4;
     }
 
-    .portfolio__project:nth-child(6){
-        grid-column: span 2;
+    .portfolio__project:nth-child(4){
+        grid-column: span 4;
     }
 }
 
