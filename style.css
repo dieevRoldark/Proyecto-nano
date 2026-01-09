@@ -14,10 +14,18 @@ body, div, ul, nav, header, footer, a, li, label {
     padding: 0;
 }
 
+:root {
+    --primary-color: #48e;
+    --secondary-color: #26a;
+    --backgraund-color: #a5bdba;
+}
+
+
+
 /* ------ HEADER SECTION ------ */
 
 .header {
-    background-color: #efe8e8;
+    background-color: var(--backgraund-color);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -25,7 +33,7 @@ body, div, ul, nav, header, footer, a, li, label {
     z-index: 10;
     text-align: center;
     font-size: 20px;
-    color: #48e;
+    color: rgb(0, 0, 0);
 }
 
 .header__open-nav-button {
@@ -90,7 +98,7 @@ body, div, ul, nav, header, footer, a, li, label {
 @media screen and (min-width: 600px) {
 
     .header {
-        padding: 20px 0;
+        padding: 18px 0;
         animation: header-movement both;
         animation-timeline: scroll();
         position: sticky;
@@ -129,7 +137,7 @@ body, div, ul, nav, header, footer, a, li, label {
 .profile {
     container-name: profile;
     container-type: inline-size;
-    animation: aparecer 2.4s -.6s both;
+    animation: aparecer 2.4s -.6s both;    
 }
 
 .profile__wrapper {
@@ -137,19 +145,17 @@ body, div, ul, nav, header, footer, a, li, label {
     flex-direction: column;
     justify-content: center;
     background-color: #fff;
-    max-width: 1400px;
-
+    max-width: 1400px;    
 }
 
 .profile__data-container {
     max-width: 500px;
     padding: 12px;
-    border-bottom-right-radius: 10px;
-    border-top-right-radius: 10px;
+    border-radius: 0 16px 16px 0;
 }
 
 .profile__img-container {
-    max-height: 600px;
+    max-height: 450px;
     overflow: hidden;
 }
 
@@ -218,12 +224,12 @@ h1 {
 @container profile (min-width: 600px) {
     .profile__wrapper {
         flex-direction: row;
-        padding: 20px;
+        padding: 60px;
         background-color: transparent;
-        height: 85vh;
-        margin: auto;
-        margin: 60px 60px;
+        min-height: 100vh;
+        margin: auto;        
     }
+
     .profile__data-container {
         background-color: #fff;
         display: flex;
@@ -246,8 +252,8 @@ h1 {
 
     .profile__img-container {
         max-height: initial;
-        border-top-left-radius: 10px;
-        border-bottom-left-radius: 10px;
+        max-width: 400px;
+        border-radius: 16px 0 0 16px;
     }
 
     .profile__img {
@@ -265,7 +271,7 @@ h1 {
 .portfolio {
     background-color: #18233f;
     color: #fff;
-    min-height: 100vh;
+    min-height: 80vh;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -274,7 +280,7 @@ h1 {
 }
 
 .portfolio__title {
-    font-size: 1.9rem;
+    font-size: 1.6rem;
 }
 
 .portfolio__project-container {
@@ -283,25 +289,26 @@ h1 {
     max-width: 1300px;
     margin: auto;
     width: 100%;
-    gap: 12px;
-    padding: 12px;
-    min-height: 90vh;
+    gap: 6px;
+    min-height: 80vh;
 }
 
 .portfolio__project {
     background-image: linear-gradient(#0009,#0009), url("/imgs/diego.jpg");
     background-position: center;
     background-size: cover;
-    display: grid;
     place-content: center;
     height: 150px;
+    margin: 10px;
 }
+
 .portfolio--projects {
     background-image: linear-gradient(#0009,#0009), url("/imgs/project1.png");
     background-position: center;
     background-size: cover;
     height: 150px;
 }
+
 
 .portfolio__project:hover {
     opacity: 0.74;
@@ -311,17 +318,35 @@ h1 {
 /* ------ PROYECT QUERIES ------ */
 
 @container portfolio (min-width: 56.25rem) {
+
     .portfolio__project-container {
-        grid-template-columns: repeat(auto-fill, minmax,(400px,1fr));
+        min-height: 50vh;
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-columns: 1fr;
+        
+    }
+
+    .portfolio__project {
+        border-radius: 14px;
     }
 
     .portfolio__project:first-child{
-        grid-column: span 4;
+        grid-column: span 2;        
+    }
+
+    .portfolio__project:nth-child(3){
+        grid-column: span 1;        
     }
 
     .portfolio__project:nth-child(4){
-        grid-column: span 4;
+        grid-column: span 2;
+        
     }
+
+    .portfolio__title {
+        padding: 50px 0px 0px 0px;
+        font-size: 2.1rem;
+    }        
 }
 
 
@@ -329,13 +354,13 @@ h1 {
 
 /* ------ CONTACT SECTION ------ */
 .form {
-    min-height: 60vh;
+    min-height: 70vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 30px 0;
-    container: form;
+    container: formu;
     container-type: inline-size;
 }
 
@@ -375,11 +400,17 @@ h1 {
 
 /* ------ CONTACT QUERIES ------ */
 
-@container form (min-width: 56.25rem) {
+@container formu (min-width: 56.25rem) {
+
+    .form {
+        min-height: 100vh;
+       
+    }
+
     .form__form {
         grid-template-columns: 1fr 1fr;
         grid-template-areas: 
-        "name lastname"
+        "name name"
         "email email"
         "message message"
         "button button";
@@ -387,7 +418,8 @@ h1 {
         background-image: radial-gradient(#18233f44,#18233f11);
         padding: 30px;
         border-radius: 12px;
-        box-shadow: 0px 0px 25px #0006;
+        box-shadow: 0px 0px 25px #0006;       
+        
     }
 
     .form__input-container:first-child {
