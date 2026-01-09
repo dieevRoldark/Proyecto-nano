@@ -9,7 +9,7 @@ body {
     color: #101632dd;
 }
 
-body, div, ul, nav, header, footer, a, li, label {
+body, div, ul, nav, header, footer, a, li, label, input {
     margin: 0;
     padding: 0;
 }
@@ -159,28 +159,39 @@ body, div, ul, nav, header, footer, a, li, label {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: #fff;
-    max-width: 1400px;    
+    background-color: var(--card-bg);
+    max-width: 1400px;
 }
 
 .profile__data-container {
     max-width: 500px;
+    max-height: auto;
     padding: 12px;
     border-radius: 0 16px 16px 0;
+    color: var(--text-secondary);
 }
 
 .profile__img-container {
-    max-height: 450px;
+    max-height: 250px;
+    max-width: 250px;
     overflow: hidden;
+    border-radius: 100%;
+    border: 6px solid var(--border);
+    box-shadow: 0px 0px 15px #0002;
+    margin: auto;
+    margin-top: 8px;
 }
 
 .profile__img {
     max-width: 100%;
-    width: 720px;
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
 h1 {
-    color: #26a;
+    font-size: 1.9rem;
+    color: var(--text-primary);
+    margin-top: 10px;
+    margin-bottom: 6px;
 }
 
 
@@ -247,7 +258,6 @@ h1 {
     }
 
     .profile__data-container {
-        color: #fff;
         display: flex;
         align-items: center;
         background-color: var(--card-bg);
@@ -258,16 +268,10 @@ h1 {
         margin-top: 0;
         font-size: 3rem;
         text-wrap: balance;
-        color: var(--text-primary);
     }
 
     .profile__data {
         max-width: 620px;        
-    }
-
-    .profile__description p {
-        color: var(--text-secondary);
-
     }
 
     .profile__description h1{
@@ -278,7 +282,9 @@ h1 {
         max-height: initial;
         max-width: 400px;
         border-radius: 16px 0 0 16px;
+        border: none;
         box-shadow: 0px 0px 25px var(--shadow);
+        margin: 0;
     }
 
     .profile__img {
@@ -343,12 +349,23 @@ h1 {
     height: 150px;
 }
 
+.portfolio__project h2 {
+    margin-bottom: 0px;
+    font-size: 1.1rem;
+}
+
+.portfolio__project p {
+    font-size: 0.8rem;
+    margin: 9px 0;
+    color: var(--text-secondary);
+}
+
 .portfolio__project a {
-    color: #fff;
+    color: var(--text-muted);
     font-size: 0.8rem;
     text-decoration: none;
     padding: 8px 10px;
-    background-color: #48e8;
+    background-color: rgba(9, 41, 88, 0.533);
     border-radius: 8px;
 }
 
@@ -428,7 +445,7 @@ h1 {
 }
 
 .form__input-container {
-    margin: 6px 0;
+    margin: 6px 3px;
     padding: 4px;
     color: #fff;
 }
