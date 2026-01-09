@@ -5,7 +5,7 @@
 
 body {
     font-family: lora;
-    background-color: #e2eaff;
+    background-color: var(--primary);
     color: #101632dd;
 }
 
@@ -15,17 +15,28 @@ body, div, ul, nav, header, footer, a, li, label {
 }
 
 :root {
-    --primary-color: #48e;
-    --secondary-color: #26a;
-    --backgraund-color: #a5bdba;
+  --primary: #3b4550;
+  --primary-dark: #0a3d66;
+  --primary-hover: #0d5ba8;
+  --primary-light: #09f;
+  --background: #06182a;
+  --text-primary: #ffffff;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --border: rgba(255, 255, 255, 0.1);
+  --card-bg: #1e293b;
+  --shadow: rgba(0, 0, 0, 0.3);
+  --input-bg: #1e293b;
+  --hsla-example: hsla(210, 100%, 56%, 1);
 }
+
 
 
 
 /* ------ HEADER SECTION ------ */
 
 .header {
-    background-color: var(--backgraund-color);
+    background-color: var(--background);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -37,7 +48,7 @@ body, div, ul, nav, header, footer, a, li, label {
 }
 
 .header__open-nav-button {
-    color: #48e;
+    color: var(--primary-dark);
     font-size: 3rem;
     font-weight: 700;
     position: absolute;
@@ -124,6 +135,10 @@ body, div, ul, nav, header, footer, a, li, label {
 
     }
 
+    .header__nav-item {
+        color: var(--text-primary);
+    }
+
     .header__open-nav-button{
         display: none;
     }
@@ -170,7 +185,7 @@ h1 {
 
 
 .profile__skills-container h2 {
-    color: #26a;
+    color: var(--text-primary);
 }
 
 .profile__skill {
@@ -194,7 +209,7 @@ h1 {
 }
 
 .profile__skill-name {
-    color: #48e;
+    color: var(--text-muted);
 }
 
 .load-bar__bar {
@@ -227,23 +242,32 @@ h1 {
         padding: 60px;
         background-color: transparent;
         min-height: 100vh;
-        margin: auto;        
+        margin: auto;
+        margin-top: -45px;
     }
 
     .profile__data-container {
-        background-color: #fff;
+        color: #fff;
         display: flex;
         align-items: center;
+        background-color: var(--card-bg);
+        box-shadow: 0px 0px 25px var(--shadow);
     }
 
     h1 {
         margin-top: 0;
         font-size: 3rem;
         text-wrap: balance;
+        color: var(--text-primary);
     }
 
     .profile__data {
-        max-width: 620px;
+        max-width: 620px;        
+    }
+
+    .profile__description p {
+        color: var(--text-secondary);
+
     }
 
     .profile__description h1{
@@ -254,6 +278,7 @@ h1 {
         max-height: initial;
         max-width: 400px;
         border-radius: 16px 0 0 16px;
+        box-shadow: 0px 0px 25px var(--shadow);
     }
 
     .profile__img {
@@ -261,6 +286,15 @@ h1 {
         object-fit: cover;
         width: 620px;
     }
+
+    .load-bar {
+        border-color: var(--border);
+        color: var(--text-secondary);
+    }
+
+    .load-bar__bar {
+        background-color: var(--primary-light);
+    }   
 } 
 
 /* ------ PROFILE ENDS ------ */
@@ -309,6 +343,15 @@ h1 {
     height: 150px;
 }
 
+.portfolio__project a {
+    color: #fff;
+    font-size: 0.8rem;
+    text-decoration: none;
+    padding: 8px 10px;
+    background-color: #48e8;
+    border-radius: 8px;
+}
+
 
 .portfolio__project:hover {
     opacity: 0.74;
@@ -322,13 +365,16 @@ h1 {
     .portfolio__project-container {
         min-height: 50vh;
         grid-template-rows: repeat(3, 1fr);
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
+        padding: 60px;
+        gap: 15px;
         
     }
 
     .portfolio__project {
         border-radius: 14px;
     }
+
 
     .portfolio__project:first-child{
         grid-column: span 2;        
@@ -341,6 +387,16 @@ h1 {
     .portfolio__project:nth-child(4){
         grid-column: span 2;
         
+    }
+
+    .portfolio__project a {
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 6px 10px;
+    background-color: #48e8;
+    border-radius: 8px;
     }
 
     .portfolio__title {
@@ -360,7 +416,7 @@ h1 {
     justify-content: center;
     align-items: center;
     padding: 30px 0;
-    container: formu;
+    container: form;
     container-type: inline-size;
 }
 
@@ -369,6 +425,12 @@ h1 {
     max-width: 600px;
     width: 100%;
     display: grid;
+}
+
+.form__input-container {
+    margin: 6px 0;
+    padding: 4px;
+    color: #fff;
 }
 
 .form__input-container :is(input,textarea) {
@@ -394,32 +456,38 @@ h1 {
 
 .form__title{
     font-size: 2.6rem;
+    color: #fff
 }
 
 
 
 /* ------ CONTACT QUERIES ------ */
 
-@container formu (min-width: 56.25rem) {
-
-    .form {
-        min-height: 100vh;
-       
-    }
-
+@container form (min-width: 56.25rem) {
     .form__form {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
         grid-template-areas: 
         "name name"
         "email email"
+        "lastname lastname"
         "message message"
         "button button";
         gap: 12px;
-        background-image: radial-gradient(#18233f44,#18233f11);
+        background-image: radial-gradient(var(--border),var(--card-bg));
         padding: 30px;
         border-radius: 12px;
-        box-shadow: 0px 0px 25px #0006;       
-        
+        box-shadow: 0px 0px 25px #0006;
+        height: 65vh;
+    }
+
+    .form__input-container {
+        margin: 0;
+        padding: 3px;
+        color: #fff;
+    }
+
+    .form__input-container input, textarea {
+        border-radius: 4px;
     }
 
     .form__input-container:first-child {
@@ -441,6 +509,12 @@ h1 {
     .form__input-container:first-child(5) {
         grid-area: button;
     }
+
+    .form__title{
+        font-size: 3.2rem;
+        margin-bottom: 40px;
+        color: #fff;
+    }
 }
 
 /* ------ CONTACT ENDS ------ */
@@ -448,7 +522,7 @@ h1 {
 /* ------ FOOTER SECTION ------ */
 
 
-footer {
+.footer {
     padding: 60px;
     text-align: center;
     background-color: #18233f;
@@ -457,12 +531,12 @@ footer {
     font-weight: bold;
 }
 
-footer a {
+.footer a {
     text-decoration: none;
     color: #e2eaff;
 }
 
-footer :is(:hover,:active) {
+.footer :is(:hover,:active) {
     text-decoration: underline;
 }
 /* ------ FOOTER ENDS ------ */
