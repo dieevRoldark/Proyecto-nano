@@ -169,6 +169,7 @@ body, div, ul, nav, header, footer, a, li, label, input {
     padding: 12px;
     border-radius: 0 16px 16px 0;
     color: var(--text-secondary);
+    margin: auto;
 }
 
 .profile__img-container {
@@ -262,6 +263,7 @@ h1 {
         align-items: center;
         background-color: var(--card-bg);
         box-shadow: 0px 0px 25px var(--shadow);
+        margin: 0;
     }
 
     h1 {
@@ -425,6 +427,116 @@ h1 {
 
 /* ------ PROYECT ENDS ------ */
 
+
+/* ------ TECH SECTION ------ */
+
+
+.tech {
+    min-height: 90vh;
+    background-color: var(--background);
+    color: var(--text-primary);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    container-name: tech;
+    container-type: inline-size;
+    margin: 0 auto;
+}
+
+.tech__item-header {
+    padding: 20px;
+}
+
+.tech__item h2 {
+    margin-bottom: 6px;
+    font-size: 1.9rem;
+}
+
+.tech__item-container {
+    display: flex;
+    flex-direction: row;
+}
+
+
+.tech__item-card {
+    background-color: var(--background);
+    border-top: 1px solid var(--border);
+    text-align: center;
+
+    small {
+        color: var(--text-muted);
+        font-size: 0.875rem;
+    }
+}
+
+.tech__item-card p, h3 {
+    display: none ;
+}
+
+.tech__article {
+    background-color: var(--card-bg);
+    box-shadow: 0px 1px 3px var(--shadow);
+    border-radius: 0.5rem;
+    padding: 10px;
+    margin: 16px;
+    max-width: 100%;
+    height: 85px;
+
+    svg {
+        color: var(--primary-light);
+        background-color: rgba(0, 153, 255, .3);
+        width: 64px;
+        height: 64px;
+        padding: 16px;
+        border-radius: 100%;
+    }
+
+    p {
+        color: var(--text-secondary);
+    }
+
+    h3 {
+        font-weight: 500;
+    }
+}
+
+
+
+/* ------ TECH QUERIES ------ */
+
+@container tech (min-width: 56.25rem) {
+    .tech__item-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1px;
+        max-width: 1200px;
+        margin: auto;
+        height: 340px;
+    }
+    
+    .tech__item-card {
+        height: 100%;
+    }
+
+    .tech__article {
+        min-height: 220px;
+        padding: 20px 10px;
+    }
+
+    .tech__item-card p, h3 {
+        display: block ;
+    }
+
+}
+
+
+
+/* ------ TECH ENDS ------ */
+
+
+
+
 /* ------ CONTACT SECTION ------ */
 .form {
     min-height: 70vh;
@@ -535,93 +647,6 @@ h1 {
 }
 
 /* ------ CONTACT ENDS ------ */
-
-
-/* ------ TECH SECTION ------ */
-
-
-.tech {
-    min-height: 80vh;
-    background-color: var(--background);
-    color: var(--text-primary);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    padding: 40px 20px;
-    container-name: tech;
-    container-type: inline-size;
-    margin: 0 auto;
-}
-
-.tech__item h2 {
-    margin-bottom: 6px;
-    font-size: 1.9rem;
-}
-
-.tech__item-card {
-    background-color: var(--background);
-    border-top: 1px solid var(--border);
-    text-align: center;
-    padding: 16px;
-
-    small {
-        color: var(--text-muted);
-        font-size: 0.875rem;
-    }
-}
-
-
-.tech__article {
-    background-color: var(--card-bg);
-    box-shadow: 0px 1px 3px var(--shadow);
-    border-radius: 0.5rem;
-    padding: 2rem;
-    margin: 16px;
-    max-width: 100%;
-
-    svg {
-        color: var(--primary-light);
-        background-color: rgba(0, 153, 255, .3);
-        width: 64px;
-        height: 64px;
-        padding: 16px;
-        border-radius: 100%;
-    }
-
-    p {
-        color: var(--text-secondary);
-    }
-
-    h3 {
-        font-weight: 500;
-    }
-}
-
-
-
-/* ------ TECH QUERIES ------ */
-
-@container tech (min-width: 56.25rem) {
-    .tech__item-container {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
-        max-width: 1200px;
-        margin: auto;
-        height: 100vh;
-    }
-    
-    .grid__item-card {
-        height: 100%;
-    }
-}
-
-/* ------ TECH SECTION ------ */
-
-
-
-
 
 
 /* ------ FOOTER SECTION ------ */
