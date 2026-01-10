@@ -150,6 +150,7 @@ body, div, ul, nav, header, footer, a, li, label, input {
 /* ------ PROFILE SECTION ------ */
 
 .profile {
+    max-height:100vh;
     container-name: profile;
     container-type: inline-size;
     animation: aparecer 2.4s -.6s both;    
@@ -173,7 +174,13 @@ body, div, ul, nav, header, footer, a, li, label, input {
 }
 
 .profile__description strong {
-    color: var(--hsla-example);
+    color: #78ba2b;
+}
+
+.profile__description p {
+    text-wrap: balance;
+    line-height: 1.6;
+    white-space:pre-line;
 }
 
 .profile__img-container {
@@ -193,12 +200,24 @@ body, div, ul, nav, header, footer, a, li, label, input {
 }
 
 h1 {
-    font-size: 1.9rem;
     color: var(--text-primary);
-    margin-top: 10px;
-    margin-bottom: 6px;
+    margin-top: 0;
+    font-size: 1.9rem;
+    line-height: 1.2;
+    text-wrap: balance;
+    align-items: center;
 }
 
+.profile__skills-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border: 2px solid var(--border);
+    border-radius: 4px;
+    padding: 20px 0;
+}
 
 .profile__skills-container h2 {
     color: var(--text-primary);
@@ -207,9 +226,6 @@ h1 {
 .profile__skill {
     list-style: none;
     display: flex;
-    margin: 10px;
-    max-width: 600px;
-    margin-left: 0;
     align-items: center;
     justify-content: center;
 }
@@ -228,7 +244,7 @@ h1 {
     color: #fff;
     padding: 2px;
     font-size: 12px;
-    width: 80%;
+    min-width: 100%;
     margin: 4px;
     margin-left: 0;
 }
@@ -238,13 +254,14 @@ h1 {
 }
 
 .load-bar__bar {
+    align-items: center;
     background-color: #48e;
     border-radius: 4px;
-    padding: 4px 6px;
+    width: 100%ç;
 }
 
-.bar--80 {
-    width: 80%;
+.bar--70 {
+    width: 70%;
 }
 
 /* Re-factory
@@ -283,16 +300,16 @@ h1 {
 
     h1 {
         margin-top: 0;
-        font-size: 3rem;
-        text-wrap: balance;
+        padding-top: 10px;
     }
 
     .profile__data {
         max-width: 620px;        
     }
 
-    .profile__description h1{
-        font-size: 1.9rem;
+    .profile__description p {
+        letter-spacing: 0.3px;
+        word-spacing: 0.1px;
     }
 
     .profile__img-container {
@@ -447,7 +464,6 @@ h1 {
 
 
 .tech {
-    min-height: 65vh;
     background-color: var(--background);
     color: var(--text-primary);
     display: flex;
@@ -459,9 +475,6 @@ h1 {
     margin: 0 auto;
 }
 
-.tech__item-header {
-    padding: 20px;
-}
 
 .tech__item h2 {
     margin-bottom: 6px;
@@ -471,6 +484,7 @@ h1 {
 .tech__item-container {
     display: flex;
     flex-direction: row;
+    max-height: 100%;
 }
 
 
@@ -478,6 +492,7 @@ h1 {
     background-color: var(--background);
     border-top: 1px solid var(--border);
     text-align: center;
+    padding: 20px 0;
 
     small {
         color: var(--text-muted);
@@ -487,6 +502,10 @@ h1 {
 
 .tech__item-card p, h3 {
     display: none ;
+}
+
+.tech__title {
+    padding: 25px 0;
 }
 
 .tech__article {
@@ -527,11 +546,7 @@ h1 {
         gap: 1px;
         max-width: 1200px;
         margin: auto;
-        height: 340px;
-    }
-    
-    .tech__item-card {
-        height: 100%;
+
     }
 
     .tech__article {
@@ -554,7 +569,8 @@ h1 {
 
 /* ------ CONTACT SECTION ------ */
 .form {
-    min-height: 70vh;
+    min-width: 100%;
+    max-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -599,8 +615,8 @@ h1 {
 }
 
 .form__title{
-    font-size: 2.6rem;
-    color: #fff
+    font-size: 2.2rem;
+    color: #fff;
 }
 
 
