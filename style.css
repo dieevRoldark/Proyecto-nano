@@ -27,7 +27,7 @@ body, div, ul, nav, header, footer, a, li, label, input {
   --card-bg: #1e293b;
   --shadow: rgba(0, 0, 0, 0.3);
   --input-bg: #1e293b;
-  --hsla-example: hsla(210, 100%, 56%, 1);
+  --hsla-example: rgb(45, 170, 20);
 }
 
 
@@ -172,6 +172,10 @@ body, div, ul, nav, header, footer, a, li, label, input {
     margin: auto;
 }
 
+.profile__description strong {
+    color: var(--hsla-example);
+}
+
 .profile__img-container {
     max-height: 250px;
     max-width: 250px;
@@ -207,6 +211,15 @@ h1 {
     max-width: 600px;
     margin-left: 0;
     align-items: center;
+    justify-content: center;
+}
+
+.profile__skill-icon {
+    color: #48e;
+    font-size: 18px;
+    margin-right: 8px;
+    min-width: 20px;
+    filter: drop-shadow(15px 15px 30px rgba(0, 0, 0, 0, 4));
 }
 
 .load-bar {
@@ -234,6 +247,8 @@ h1 {
     width: 80%;
 }
 
+/* Re-factory
+
 .bar--70 {
     width: 70%;
 }
@@ -245,7 +260,7 @@ h1 {
 .bar--90 {
     width: 90%;
 }
-
+*/
 /* ------ PROFILE QUERIES ------ */
 
 @container profile (min-width: 600px) {
