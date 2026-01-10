@@ -432,7 +432,7 @@ h1 {
 
 
 .tech {
-    min-height: 90vh;
+    min-height: 65vh;
     background-color: var(--background);
     color: var(--text-primary);
     display: flex;
