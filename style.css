@@ -264,20 +264,6 @@ h1 {
     width: 70%;
 }
 
-/* Re-factory
-
-.bar--70 {
-    width: 70%;
-}
-
-.bar--60 {
-    width: 60%;
-}
-
-.bar--90 {
-    width: 90%;
-}
-*/
 /* ------ PROFILE QUERIES ------ */
 
 @container profile (min-width: 600px) {
@@ -368,7 +354,7 @@ h1 {
 }
 
 .portfolio__project {
-    background-image: linear-gradient(#0009,#0009), url("/imgs/diego.jpg");
+    background-image: linear-gradient(#0009,#0009), url("/imgs/project1.png");
     background-position: center;
     background-size: cover;
     place-content: center;
@@ -376,11 +362,19 @@ h1 {
     margin: 10px;
 }
 
-.portfolio--projects {
-    background-image: linear-gradient(#0009,#0009), url("/imgs/project1.png");
-    background-position: center;
-    background-size: cover;
-    height: 150px;
+
+.portfolio__project:last-child {
+    background-image: radial-gradient(var(--input-bg), var(--background));
+
+
+    p {
+        color: var(--text-primary);
+    }
+
+    span {
+        color: var(--text-muted);
+    }
+    
 }
 
 .portfolio__project h2 {
@@ -473,12 +467,13 @@ h1 {
     container-name: tech;
     container-type: inline-size;
     margin: 0 auto;
+    padding: 60px 0;
 }
 
 
-.tech__item h2 {
+.tech__item-header h2 {
     margin-bottom: 6px;
-    font-size: 1.9rem;
+    font-size: 1.7rem;
 }
 
 .tech__item-container {
@@ -500,7 +495,7 @@ h1 {
     }
 }
 
-.tech__item-card p, h3 {
+.tech__item-card p,ul {
     display: none ;
 }
 
@@ -551,10 +546,11 @@ h1 {
 
     .tech__article {
         min-height: 220px;
+
         padding: 20px 10px;
     }
 
-    .tech__item-card p, h3 {
+    .tech__item-card p, h3, ul {
         display: block ;
     }
 
