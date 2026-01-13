@@ -62,7 +62,7 @@ body, div, ul, nav, header, footer, a, li, label, input {
 
 .header__nav{
     display: none;
-    background-image: linear-gradient(var(--card-bg), var(--primary));
+    background-color:#0009 ;
     position: absolute;
     height: 100vh;
     width: 100vw;
@@ -218,13 +218,26 @@ h1 {
     border: 2px solid var(--border);
     border-radius: 4px;
     padding: 20px 0;
+
+    svg {
+        color: var(--primary-light);
+        background-color: rgba(0, 153, 255, .3);
+        width: 30px;
+        height: 30px;
+        margin: 5px;
+        border-radius: 50%;
+        padding:3.1px;
+
+    }
+
+    a[download] {
+        display: inline-block;
+    }
 }
 
 .profile__skills-container h2 {
     color: var(--text-primary);
 }
-
-
 
 
 .profile__skill {
@@ -315,11 +328,11 @@ h1 {
         object-fit: cover;
         width: 620px;
     }
-
+ 
     .profile__skills-container {
         padding: 25px;
 
-
+        
         span {
             display: block;
             margin-left: 4px;
@@ -328,10 +341,8 @@ h1 {
         svg {
         color: var(--primary-light);
         background-color: rgba(0, 153, 255, .3);
-        width: 60px;
-        height: 64px;
-        padding: 16px;
         border-radius: 100%;
+        box-shadow: 0px 0px 25px var(--shadow);
     }
 
     }
@@ -385,6 +396,7 @@ h1 {
 .portfolio__project {
     background-image: linear-gradient(#0009,#0009), url("/imgs/project1.png");
     background-position: center;
+    box-shadow: 0px 0px 7px var(--border);
     background-size: cover;
     place-content: center;
     height: 150px;
@@ -398,10 +410,12 @@ h1 {
 
     p {
         color: var(--text-primary);
+        padding: 10px;
     }
 
     span {
         color: var(--text-muted);
+        display: block;
     }
     
 }
@@ -441,8 +455,6 @@ h1 {
         grid-template-rows: repeat(3, 1fr);
         grid-template-columns: 1fr 1fr;
         padding: 60px;
-        gap: 15px;
-        
     }
 
     .portfolio__project {
@@ -462,7 +474,7 @@ h1 {
         grid-column: span 2;
         
     }
-
+    
     .portfolio__project a {
         color: #fff;
         font-size: 0.8rem;
@@ -749,7 +761,6 @@ h1 {
     gap: 9px;
     justify-content: center;
     text-align: center;
-    
 }
 
 .footer a {
@@ -778,4 +789,3 @@ h1 {
         color: #fff;
     }
 }
-
