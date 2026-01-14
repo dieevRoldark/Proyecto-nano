@@ -9,7 +9,7 @@ body {
     color: #101632dd;
 }
 
-body, div, ul, nav, header, footer, a, li, label, input {
+body, div, ul, nav, header, footer, a, li, label, input, span {
     margin: 0;
     padding: 0;
 }
@@ -151,10 +151,9 @@ body, div, ul, nav, header, footer, a, li, label, input {
 /* ------ PROFILE SECTION ------ */
 
 .profile {
-    max-height:100vh;
     container-name: profile;
     container-type: inline-size;
-    animation: aparecer 2.4s -.6s both;    
+    animation: aparecer 2.4s -.6s both;
 }
 
 .profile__wrapper {
@@ -232,6 +231,8 @@ h1 {
 
     a[download] {
         display: inline-block;
+        margin: 0%;
+        padding: 0;
     }
 }
 
@@ -316,7 +317,7 @@ h1 {
 
     .profile__img-container {
         max-height: initial;
-        max-width: 400px;
+        min-width: 360px;
         border-radius: 16px 0 0 16px;
         border: none;
         box-shadow: 0px 0px 25px var(--shadow);
@@ -350,7 +351,7 @@ h1 {
     .load-bar {
         border-color: var(--border);
         color: var(--text-secondary);
-        min-height: 20px;
+        min-height: 10px;
         
         
     }
@@ -358,7 +359,7 @@ h1 {
     .load-bar__bar {
         background-color: var(--primary-light);
         width: 70%;
-        min-height: 20px;
+        min-height: 10px;
         font-size: 15px;
     }   
 } 
@@ -637,7 +638,6 @@ h1 {
 /* ------ CONTACT SECTION ------ */
 .form {
     min-width: 100%;
-    max-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -776,7 +776,10 @@ h1 {
 
 /* ------ FOOTER ENDS ------ */
 
-/*------ Animaciones-------*/
+
+/*------ ANIMACIONES -------*/
+
+
 
 @keyframes header-movement {
     form {
