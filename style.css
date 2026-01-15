@@ -776,18 +776,30 @@ h1 {
     font-weight: bold;
     grid-template-columns: repeat(3,1fr);
     gap: 9px;
-    justify-content: center;
+    align-items: center;
     text-align: center;
-}
 
-.footer a {
+    a {
     color: #e2eaff;
     text-decoration: none;
 }
+}
+
 
 .nav__footer ul {
     list-style: none;
+    display: grid;
+
+    li {
+        padding: 6px;
+    }
+
+    a {
+        font-size: 0.9rem;
+    }
 }
+
+
 /* ------ FOOTER QUERIES ------ */
 
 
@@ -795,8 +807,6 @@ h1 {
 
 
 /*------ ANIMACIONES -------*/
-
-
 
 @keyframes header-movement {
     form {
