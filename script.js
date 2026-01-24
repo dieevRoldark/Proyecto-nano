@@ -19,14 +19,9 @@ boton.addEventListener('click', ()=> {
     });
   }); */
 
-const menuLinks = document.querySelector('#link')
+const boton = document.querySelector('#cv-botton')
 
-const boton = document.querySelector('#open-menu')
-
-
-menuLinks.forEach(event => {
-    event.addEventListener('click', () => {
-        boton.checked = false;
-    })
-    
-});
+boton.addEventListener( 'click', function() {
+    boton.classList.add("is-applied")
+    boton.disabled = true
+})

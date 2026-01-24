@@ -850,3 +850,9 @@ h1 {
         opacity: 1;
     }
 }
+
+/* ---- BOTTON ID ---- */
+
+.is-applied {
+    background-color: rgb(207, 233, 250);
+}
