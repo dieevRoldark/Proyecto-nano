@@ -1,23 +1,7 @@
 
-/*const boton = document.querySelector ('#open-menu')
 
-boton.addEventListener('click', ()=> {
-    boton.getElementById.checked = false;
-})*/
+// Script for the CV button
 
-/*  // 1. Seleccionamos todos los enlaces dentro del menú
-  const menuLinks = document.querySelectorAll('.header__nav-list a');
-  
-  // 2. Seleccionamos el checkbox
-  const checkbox = document.getElementById('#open-menu');
-
-  // 3. A cada enlace le añadimos un "escucha" (listener)
-  menuLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      // Al hacer clic en un enlace, desmarcamos el checkbox
-      checkbox.checked = false;
-    });
-  }); */
 
 const boton = document.querySelector('#cv-botton')
 
@@ -25,3 +9,19 @@ boton.addEventListener( 'click', function() {
     boton.classList.add("is-applied")
     boton.disabled = true
 })
+
+
+
+// Script for the menu toggle button
+
+window.menu.addEventListener('click', () => {
+    document.getElementById('open-menu').checked = true;
+    
+
+    }
+);
+
+
+// Script for the contact form
+
+const form = document.querySelector('#contact-form');
