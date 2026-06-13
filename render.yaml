@@ -1,0 +1,36 @@
+services:
+  - type: web
+    name: portfolio-contact-api
+    runtime: node
+    rootDir: backend
+    plan: free
+    region: oregon
+    buildCommand: pnpm install --frozen-lockfile --prod
+    startCommand: node server.js
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: DB_HOST
+        sync: false
+      - key: DB_PORT
+        value: 3306
+      - key: DB_USER
+        sync: false
+      - key: DB_PASSWORD
+        sync: false
+      - key: DB_NAME
+        sync: false
+      - key: CORS_ORIGIN
+        value: https://roldandev.com
+      - key: RATE_LIMIT_MAX
+        value: 10
+      - key: RATE_LIMIT_WINDOW_MS
+        value: 900000
+      - key: DB_AUTO_MIGRATE
+        value: false
+      - key: DB_SSL
+        value: true

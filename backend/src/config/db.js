@@ -2,6 +2,10 @@ import mysql from 'mysql2/promise';
 import { config } from './env.js';
 import { logger } from '../utils/logger.js';
 
+const sslConfig = config.db.ssl
+  ? { rejectUnauthorized: false, minVersion: 'TLSv1.2' }
+  : false;
+
 const pool = mysql.createPool({
   host: config.db.host,
   port: config.db.port,
@@ -17,6 +21,7 @@ const pool = mysql.createPool({
   enableKeepAlive: true,
   keepAliveInitialDelay: 0,
   charset: 'utf8mb4',
+  ssl: sslConfig,
 });
 
 const CREATE_DATABASE_SQL =
