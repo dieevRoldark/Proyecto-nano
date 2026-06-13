@@ -1443,12 +1443,27 @@ strong {
 
 .toast svg {
   color: var(--color-accent);
+  flex-shrink: 0;
 }
 
 .toast.is-visible {
   transform: translateX(-50%) translateY(0);
   opacity: 1;
   pointer-events: auto;
+}
+
+.toast--error {
+  border-color: var(--color-danger);
+}
+
+.toast--error svg {
+  color: var(--color-danger);
+}
+
+.btn[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
 
