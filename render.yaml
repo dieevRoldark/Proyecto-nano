@@ -1,3 +1,18 @@
+# ============================================================
+# Render Infrastructure as Code (IaC)
+# ============================================================
+# Este archivo define la configuración del servicio en Render.
+# Es SEGURO commitearlo a Git (incluso en repo público) porque:
+#
+#   1. NO contiene credenciales reales
+#   2. Las variables sensibles usan `sync: false` lo que significa
+#      que sus valores SOLO viven en el dashboard de Render
+#      (cifrados en reposo) y NUNCA se leen de este archivo
+#
+# Regla de oro: Si añades una variable sensible (password, API key,
+# token), SIEMPRE usa `sync: false`. NUNCA pongas el valor literal.
+# ============================================================
+
 services:
   - type: web
     name: portfolio-contact-api
@@ -10,20 +25,13 @@ services:
     healthCheckPath: /api/health
     autoDeploy: true
     envVars:
+      # Públicas (no sensibles)
       - key: NODE_ENV
         value: production
       - key: PORT
         value: 10000
-      - key: DB_HOST
-        sync: false
       - key: DB_PORT
         value: 3306
-      - key: DB_USER
-        sync: false
-      - key: DB_PASSWORD
-        sync: false
-      - key: DB_NAME
-        sync: false
       - key: CORS_ORIGIN
         value: https://roldandev.com
       - key: RATE_LIMIT_MAX
@@ -34,3 +42,13 @@ services:
         value: false
       - key: DB_SSL
         value: true
+
+      # Secretas (gestionadas solo desde el dashboard de Render)
+      - key: DB_HOST
+        sync: false
+      - key: DB_USER
+        sync: false
+      - key: DB_PASSWORD
+        sync: false
+      - key: DB_NAME
+        sync: false
