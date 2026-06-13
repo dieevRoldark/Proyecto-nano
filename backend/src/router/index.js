@@ -87,6 +87,11 @@ export async function handleRequest(req, res) {
     return;
   }
 
+  const isProduction = process.env.NODE_ENV === 'production';
+  if (isProduction) {
+    return sendError(res, new AppError(`Not found: ${req.method} ${pathname}`, 404));
+  }
+
   if (req.method !== 'GET' && req.method !== 'HEAD') {
     return sendError(res, new AppError(`Method not allowed: ${req.method} ${pathname}`, 405));
   }
