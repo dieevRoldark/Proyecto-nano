@@ -14,11 +14,19 @@ export function sendError(res, err) {
   const message = err instanceof AppError ? err.message : 'Internal server error';
   const details = err instanceof AppError ? err.details : null;
 
-  logger.error('Request error', {
+  const logMeta = {
     statusCode,
     name: err?.name || 'Error',
     message: err?.message || String(err),
-  });
+  };
+
+  if (statusCode >= 500) {
+    logger.error('Request error', logMeta);
+  } else if (statusCode >= 400) {
+    logger.warn('Request rejected', logMeta);
+  } else {
+    logger.info('Request note', logMeta);
+  }
 
   const payload = { success: false, error: message };
   if (details !== null) payload.details = details;
