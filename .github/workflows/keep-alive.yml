@@ -1,0 +1,56 @@
+name: Keep Render Alive
+
+on:
+  schedule:
+    # Cada 10 minutos - previene que Render (plan free) suspenda el servicio
+    - cron: '*/10 * * * *'
+  workflow_dispatch:
+    # Permite ejecución manual desde la pestaña Actions
+
+jobs:
+  ping:
+    name: Ping API Health Endpoint
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+
+    steps:
+      - name: Ping api.roldandev.com
+        run: |
+          echo "============================================"
+          echo "Keep-alive ping - $(date -u +'%Y-%m-%d %H:%M:%S UTC')"
+          echo "============================================"
+
+          PRIMARY_URL="https://api.roldandev.com/api/health"
+          FALLBACK_URL="https://portfolio-contact-api-xkz8.onrender.com/api/health"
+
+          # Intentar URL principal (dominio personalizado)
+          HTTP_CODE=$(curl -sS -o /tmp/response.json -w "%{http_code}" \
+            --max-time 60 \
+            "$PRIMARY_URL" 2>/dev/null || echo "000")
+
+          echo "Primary URL ($PRIMARY_URL) -> HTTP $HTTP_CODE"
+
+          # Si la principal falla, intentar fallback
+          if [ "$HTTP_CODE" != "200" ]; then
+            echo "Primary failed, trying fallback..."
+            HTTP_CODE=$(curl -sS -o /tmp/response.json -w "%{http_code}" \
+              --max-time 60 \
+              "$FALLBACK_URL" 2>/dev/null || echo "000")
+            echo "Fallback URL ($FALLBACK_URL) -> HTTP $HTTP_CODE"
+          fi
+
+          # Mostrar respuesta
+          if [ -f /tmp/response.json ]; then
+            echo "Response body:"
+            cat /tmp/response.json
+            echo ""
+          fi
+
+          if [ "$HTTP_CODE" = "200" ]; then
+            echo "Health check PASSED - service is alive"
+            exit 0
+          else
+            echo "Health check FAILED - service may be down"
+            # No exit 1: queremos que la próxima corrida reintente
+            exit 0
+          fi
