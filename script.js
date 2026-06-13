@@ -176,7 +176,7 @@
 
       setLoading(true);
       try {
-        const response = await fetch('https://roldandev.com/api/contact', {
+        const response = await fetch('https://api.roldandev.com/api/contact', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(data),
