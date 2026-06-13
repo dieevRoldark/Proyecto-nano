@@ -5,7 +5,10 @@ const ALLOWED_HEADERS = 'Content-Type';
 const MAX_AGE_SECONDS = '86400';
 
 export function applyCors(req, res) {
-  const origin = config.corsOrigin;
+  let origin = config.corsOrigin;
+  if (origin && origin !== '*') {
+    origin = origin.replace(/\/+$/, '');
+  }
 
   res.setHeader('Access-Control-Allow-Origin', origin);
   res.setHeader('Access-Control-Allow-Methods', ALLOWED_METHODS);
